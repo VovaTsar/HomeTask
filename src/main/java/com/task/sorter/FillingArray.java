@@ -1,11 +1,15 @@
-package com.task.sorters;
+package com.task.sorter;
 
 import java.util.Random;
 
 public final class FillingArray {
     private static final int ARRAY_SIZE = 10;
 
-    private FillingArray() {
+
+    public static void swap(int [] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 
     public static int[] fillingArray() {

@@ -1,13 +1,10 @@
-package com.task.sorters.methods;
+package com.task.sorter.method;
 
-public class InsertionSort extends SortPoint {
-    public InsertionSort(int[] array) {
-        super(array);
-    }
+public class InsertionSort implements Sort {
 
-    @Override
-    public void sort() {
-        if (this.array == null) {
+
+    public void sort(int [] array) {
+        if (array == null) {
             throw new NullPointerException();
         }else {
             System.out.println("InsertionSort");
@@ -22,7 +19,7 @@ public class InsertionSort extends SortPoint {
                     --in;
                 }
 
-                this.array[in] = temp;
+                array[in] = temp;
             }
         }
     }

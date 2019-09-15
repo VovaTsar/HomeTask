@@ -2,8 +2,7 @@ package com.task.fibonacci;
 
 public class Recursively implements Fibonacci {
 
-    public Recursively() {
-    }
+
 
     public int findFibonacci(int valueFibonacci) {
         if(valueFibonacci<0){
