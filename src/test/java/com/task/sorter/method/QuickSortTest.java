@@ -16,10 +16,9 @@ public class QuickSortTest {
         assertArrayEquals(sortArray, array);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void throwIllegalArgumentExceptionForQuickSort()
-    {
-        int [] testArrayNull= null;
+    @Test(expected = NullPointerException.class)
+    public void throwNullPointerExceptionForQuickSort() {
+        int[] testArrayNull = null;
         new QuickSort().sort(testArrayNull);
     }
 }

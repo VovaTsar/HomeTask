@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         int[] testArray = FillingArray.fillingArray();
-        Sort bubbleSort= new BubbleSort();
+        Sort bubbleSort = new BubbleSort();
         bubbleSort.sort(testArray);
         System.out.println(Arrays.toString(testArray));
 
@@ -20,7 +20,7 @@ public class Main {
         System.out.println(Arrays.toString(testArray1));
 
         int[] testArray2 = FillingArray.fillingArray();
-        Sort insertionSort= new InsertionSort();
+        Sort insertionSort = new InsertionSort();
         insertionSort.sort(testArray2);
         System.out.println(Arrays.toString(testArray2));
     }

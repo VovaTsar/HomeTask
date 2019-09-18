@@ -16,9 +16,9 @@ public class InsertionSortTest {
         assertArrayEquals(sortArray, array);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void throwIllegalArgumentExceptionForInsertionSort() {
-        int [] testArrayNull= null;
+    @Test(expected = NullPointerException.class)
+    public void throwNullPointerExceptionForInsertionSort() {
+        int[] testArrayNull = null;
         new InsertionSort().sort(testArrayNull);
     }
 }

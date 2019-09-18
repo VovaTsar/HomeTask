@@ -15,6 +15,7 @@ public class NoRecursivelyTest {
         int actual = new NoRecursively().findFibonacci(3);
         assertEquals(2, actual);
     }
+
     @Test(expected = IllegalArgumentException.class)
     public void throwIllegalArgumentExceptionForFactorial() {
         new NoRecursively().findFibonacci(-2);
