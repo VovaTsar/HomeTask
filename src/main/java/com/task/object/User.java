@@ -1,7 +1,6 @@
 package com.task.object;
 
 
-
 import javax.xml.bind.ValidationException;
 
 public final class User {
@@ -12,11 +11,10 @@ public final class User {
     private final Address address;
 
     public User(String name, String surname, int age, boolean active, Address address) throws ValidationException {
-        if(age<0){
-            throw  new ValidationException("Code<0");
-        }if (name==null||surname==null){
-            throw  new NullPointerException();
+        if (age < 0) {
+            throw new ValidationException("Age<0");
         }
+
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -46,16 +44,25 @@ public final class User {
     }
 
     public boolean equals(User user) {
-        if (this == user) return true;
-        if (user == null || getClass() != user.getClass()) return false;
+        if (this == user) {
+            return true;
+        }
+        if (user == null || getClass() != user.getClass()) {
+            return false;
+        }
         return age == user.age &&
-                name.equals(user.name) &&
-                surname.equals(user.surname) &&
+                (name == user.name || (name != null && name.equals(user.getName()))) &&
+                (surname == user.surname || (surname != null && surname.equals(user.getSurname()))) &&
                 active == user.active;
     }
 
     public int hashCode() {
-        return active ? name.length() * age + 50 : 10 * surname.length();
+        int result = 0;
+        result *= 31 * (this.name == null ? 1 : name.length() + 1);
+        result *= 31 * (this.surname == null ? 1 : surname.length() + 1);
+        result *= 31 * age;
+        result *= 31 * (active ? 2 : 1);
+        return result;
     }
 
     @Override

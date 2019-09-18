@@ -13,7 +13,7 @@ public class Address {
             throw  new ValidationException("Code<0");
         }
         if(city==null){
-            throw new NullPointerException();
+            throw new ValidationException("City==null");
         }
         this.city = city;
         this.code = code;
@@ -25,7 +25,7 @@ public class Address {
 
     public Address setCity(String city) throws ValidationException {
         if(city==null){
-            throw new NullPointerException();
+            throw new ValidationException("Code<0");
         }
         return new Address(city, code);
     }

@@ -7,7 +7,7 @@ public class NoRecursively implements Fibonacci {
 
     public int findFibonacci(int valueFibonacci) {
         if (valueFibonacci < 0) {
-            throw new UnsupportedOperationException();
+            throw new IllegalArgumentException();
         }
         for (int i = 0; i <= valueFibonacci - 2; i++) {
             int next = first + second;

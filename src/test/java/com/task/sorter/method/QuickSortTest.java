@@ -6,25 +6,20 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class QuickSortTest {
-    int[] testArray;
-    int[] sortedArray;
-    int[] testArrayNull;
-
-    @Before
-    public void setUp() {
-        testArray = new int[]{7, 3, 9, 1, 2};
-        sortedArray = new int[]{1, 2, 3, 7, 9};
-        testArrayNull = null;
-    }
 
     @Test
     public void shouldReturnQuickSort() {
-        new QuickSort().sort(testArray);
-        assertArrayEquals(sortedArray, testArray);
+        int[] array = new int[]{7, 6, 2, -1};
+        int[] sortArray = new int[]{-1, 2, 6, 7};
+
+        new QuickSort().sort(array);
+        assertArrayEquals(sortArray, array);
     }
 
-    @Test(expected = NullPointerException.class)
-    public void throwUNullPointerExceptionForQuickSort() {
+    @Test(expected = IllegalArgumentException.class)
+    public void throwIllegalArgumentExceptionForQuickSort()
+    {
+        int [] testArrayNull= null;
         new QuickSort().sort(testArrayNull);
     }
 }

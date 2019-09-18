@@ -6,7 +6,7 @@ public class Recursively implements Fibonacci {
 
     public int findFibonacci(int valueFibonacci) {
         if(valueFibonacci<0){
-            throw new UnsupportedOperationException();
+            throw new IllegalArgumentException();
         }
         if (valueFibonacci == 0) {
             return 0;

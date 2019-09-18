@@ -1,30 +1,27 @@
 package com.task.sorter.method;
 
-import com.task.fibonacci.NoRecursively;
+
 import com.task.sorter.FillingArray;
-import org.junit.Before;
 import org.junit.Test;
 
+import static java.util.Arrays.sort;
 import static org.junit.Assert.*;
 
+
 public class BubbleSortTest {
-    int[] testArray;
-    int[] sortedArray;
-    int[] testArrayNull;
-    @Before
-    public void setUp()  {
-        testArray =new int[] {7,3,9,1,2};
-         sortedArray = new int[] {1,2,3,7,9};
-         testArrayNull=null;
-    }
 
     @Test
     public void shouldReturnByBubbleSort() {
-       new BubbleSort().sort(testArray);
-       assertArrayEquals(sortedArray,testArray);
+        int[] array = new int[]{7, 6, 2, -1};
+        int[] sortArray = new int[]{-1, 2, 6, 7};
+
+        new BubbleSort().sort(array);
+        assertArrayEquals(sortArray, array);
     }
-    @Test(expected = NullPointerException.class)
-    public void throwUNullPointerExceptionForBubbleSort() {
+
+    @Test(expected = IllegalArgumentException.class)
+    public void throwIllegalArgumentExceptionForBubbleSort() {
+        int [] testArrayNull= null;
         new BubbleSort().sort(testArrayNull);
     }
 }

@@ -12,8 +12,8 @@ public class RecursivelyTest {
         assertEquals(2, actual);
     }
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void throwUnsupportedOperationExceptionForFactorial() {
+    @Test(expected = IllegalArgumentException.class)
+    public void throwIllegalArgumentExceptionForFactorial() {
         new NoRecursively().findFibonacci(-2);
     }
 }

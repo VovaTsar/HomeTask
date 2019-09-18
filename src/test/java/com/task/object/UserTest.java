@@ -15,9 +15,9 @@ public class UserTest {
     @Before
     public void setUp() throws ValidationException {
         Address address = new Address("Kyiv", 777);
-        user1 = new User("Vova", "Ts", 20, true, address);
+        user1 = new User(null, "Ts", 20, true, address);
         user2 = new User("Roma", "Ts", 20, true, address);
-        user3 = new User("Vova", "Ts", 20, true, address);
+        user3 = new User(null, "Ts", 20, true, address);
     }
 
     @Test
