@@ -1,4 +1,4 @@
-package com.task.ht2;
+package com.task.builder;
 
 import org.junit.Test;
 

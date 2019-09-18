@@ -1,4 +1,4 @@
-package com.task.ht2;
+package com.task.builder;
 
 public class User {
     private final String name;
